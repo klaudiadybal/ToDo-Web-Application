@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/style.css">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
+    <title>To-do App</title>
+</head>
+<body>
+
+    <div class="headers">
+        <h1> Welcome to the to-do app! </h1>
+        <h2>Make your day more efficient with creating your own to-dos!</h2>
+    </div>
+
+    <form th:action="@{/save}" method="post" object="${toDo}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>To-do</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="toDo : ${toDos}">
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td th:text="*{toDo.value}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+</body>
+</html>
