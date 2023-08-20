@@ -1,25 +1,50 @@
+body, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: 'serif';
-}
-
-
-h1 {
-    font-size: 30px;
-    color: #333;
-    text-align: center;
-    margin-top: 30px;
-    letter-spacing: 1px;
-}
-
-h2 {
-    font-size: 20px;
-    color: #555;
+    border-top: 10px solid #00cccc;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     text-align:center;
-    margin-top: 20px;
-    margin-bottom: 10px;
 }
 
 .headers {
-    margin: 50px;
-    font-size: 50px;
+    margin: 40px;
 }
+
+.h2 {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.add {
+    margin-top: 50px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00cccc;
+    border-radius: 4px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    display: inline-block;
+}
+
+.table-container {
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+table {
+    width: 100%;
+}
+

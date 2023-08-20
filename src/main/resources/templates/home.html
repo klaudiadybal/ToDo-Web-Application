@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
     <title>To-do App</title>
 </head>
 <body>
 
     <div class="headers">
-        <h1> Welcome to the to-do app! </h1>
-        <h2>Make your day more efficient with creating your own to-dos!</h2>
+        <h1 class="h1"> Welcome to the to-do app! </h1>
+        <h2 class="h2">Make your day more efficient with creating your own to-dos.</h2>
+        <a th:href="@{/saveForm}" class="add">Add To-do</a>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Status</th>
-                <th>To-do</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:if="${#lists.isEmpty(toDos)}">
-                <td colspan="6">No todos yet...</td>
-            </tr>
-            <tr th:each="toDo : ${toDos}">
-                <td>
-                    <a th:href="@{/delete(id=${toDo.id})}">✓</a>
-                </td>
-                <td th:text="${toDo.value}"></td>
-            </tr>
-        </tbody>
-    </table>
-    <a th:href="@{/saveForm}">Add To-do</a>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>To-do</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${#lists.isEmpty(toDos)}">
+                    <td>No todos yet...</td>
+                </tr>
+                <tr th:each="toDo : ${toDos}">
+                    <td>
+                        <a th:href="@{/delete(id=${toDo.id})}" class="btn btn-sm btn-dark">✓</a>
+                    </td>
+                    <td th:text="${toDo.value}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
