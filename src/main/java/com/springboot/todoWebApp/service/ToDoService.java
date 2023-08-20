@@ -8,10 +8,10 @@ public interface ToDoService {
 
     public List<ToDo> findAll();
 
-    public ToDo findById(Long id);
+    public ToDo findById(Integer id);
 
     public void save(ToDo toDo);
 
-    public void deleteById(Long id);
+    public void deleteById(Integer id);
 
 }

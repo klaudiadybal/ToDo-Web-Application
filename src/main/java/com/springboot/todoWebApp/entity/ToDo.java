@@ -3,13 +3,13 @@ package com.springboot.todoWebApp.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="todo")
+@Table(name="todos")
 public class ToDo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "value")
     private String value;
@@ -21,16 +21,12 @@ public class ToDo {
         this.value = value;
     }
 
-    public ToDo(long id, String value) {
-        this.id = id;
-        this.value = value;
-    }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

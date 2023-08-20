@@ -22,7 +22,7 @@ public class ToDoServiceImpl implements ToDoService{
     }
 
     @Override
-    public ToDo findById(Long id) {
+    public ToDo findById(Integer id) {
         Optional<ToDo> toDo = toDoRepository.findById(id);
 
         if(toDo.isPresent()){
@@ -38,7 +38,7 @@ public class ToDoServiceImpl implements ToDoService{
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         toDoRepository.deleteById(id);
     }
 }

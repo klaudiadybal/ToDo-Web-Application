@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>To-do App</title>
+</head>
+<body>
+    <h2>Create your new to-do!</h2>
+
+    <div>
+        <form action="#" th:object="${toDo}" th:action="@{/save}" method="post">
+            <input type="hidden" th:field="${toDo.id}"/>
+            <input type="text" th:field="${toDo.value}"/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

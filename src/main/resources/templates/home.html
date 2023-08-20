@@ -15,24 +15,26 @@
         <h2>Make your day more efficient with creating your own to-dos!</h2>
     </div>
 
-    <form th:action="@{/save}" method="post" object="${toDo}">
-        <table>
-            <thead>
-                <tr>
-                    <th>Status</th>
-                    <th>To-do</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="toDo : ${toDos}">
-                    <td>
-                        <input type="checkbox"/>
-                    </td>
-                    <td th:text="*{toDo.value}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>To-do</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${#lists.isEmpty(toDos)}">
+                <td colspan="6">No todos yet...</td>
+            </tr>
+            <tr th:each="toDo : ${toDos}">
+                <td>
+                    <input type="checkbox"/>
+                </td>
+                <td th:text="${toDo.value}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/saveForm}">Add To-do</a>
 
 </body>
 </html>
