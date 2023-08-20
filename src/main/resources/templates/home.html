@@ -28,7 +28,7 @@
             </tr>
             <tr th:each="toDo : ${toDos}">
                 <td>
-                    <input type="checkbox"/>
+                    <a th:href="@{/delete(id=${toDo.id})}">✓</a>
                 </td>
                 <td th:text="${toDo.value}"></td>
             </tr>
