@@ -60,6 +60,7 @@ a {
     vertical-align: middle;
     background-color: #343a40;
     color: #fff;
+    width: 50%;
 }
 
 .todo-table td {
@@ -78,7 +79,16 @@ a {
     color: #fff;
 }
 
+
+.no-todo {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
 .input {
+    margin-top: 50px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
@@ -89,9 +99,19 @@ a {
     margin-top: 200px;
 }
 
-.no-todo {
-    display: table-cell;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
+
+.submit {
+    margin-top: 50px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00cccc;
+    border-radius: 4px;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.submit:hover {
+    background-color: #000;
+    color: #fff;
 }

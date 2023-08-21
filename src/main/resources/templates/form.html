@@ -15,7 +15,9 @@
             <form action="#" th:object="${toDo}" th:action="@{/save}" method="post">
                 <input type="hidden" th:field="${toDo.id}"/>
                 <input type="text" th:field="${toDo.value}" class="input"/>
-                <button type="submit" class="add">Submit</button>
+                <div>
+                    <button type="submit" class="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>
