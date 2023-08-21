@@ -17,16 +17,16 @@
     </div>
 
     <div class="table-container">
-        <table>
+        <table class="todo-table">
             <thead>
-                <tr>
+                <tr class="header-row">
                     <th>Status</th>
                     <th>To-do</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:if="${#lists.isEmpty(toDos)}">
-                    <td>No todos yet...</td>
+                    <td class="no-todo" colspan="2">No todos yet...</td>
                 </tr>
                 <tr th:each="toDo : ${toDos}">
                     <td>

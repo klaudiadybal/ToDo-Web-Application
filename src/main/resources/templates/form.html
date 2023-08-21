@@ -8,15 +8,18 @@
     <title>To-do App</title>
 </head>
 <body>
-    <h2>Create your new to-do!</h2>
+    <div  class="form-container">
+        <h2 class="h2">Create your new to-do!</h2>
 
-    <div>
-        <form action="#" th:object="${toDo}" th:action="@{/save}" method="post">
-            <input type="hidden" th:field="${toDo.id}"/>
-            <input type="text" th:field="${toDo.value}"/>
-            <button type="submit">Submit</button>
-        </form>
+        <div>
+            <form action="#" th:object="${toDo}" th:action="@{/save}" method="post">
+                <input type="hidden" th:field="${toDo.id}"/>
+                <input type="text" th:field="${toDo.value}" class="input"/>
+                <button type="submit" class="add">Submit</button>
+            </form>
+        </div>
     </div>
+
 
 </body>
 </html>
