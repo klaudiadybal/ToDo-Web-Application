@@ -1,6 +1,7 @@
 package com.springboot.todoWebApp.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="todos")
@@ -12,6 +13,7 @@ public class ToDo {
     private Integer id;
 
     @Column(name = "value")
+    @NotEmpty(message = "Enter to-do.")
     private String value;
 
     public ToDo() {

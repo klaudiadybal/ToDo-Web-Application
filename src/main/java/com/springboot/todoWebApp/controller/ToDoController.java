@@ -3,8 +3,10 @@ package com.springboot.todoWebApp.controller;
 
 import com.springboot.todoWebApp.entity.ToDo;
 import com.springboot.todoWebApp.service.ToDoService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,10 +39,13 @@ public class ToDoController {
     }
 
     @PostMapping("/save")
-    public String saveToDo(@ModelAttribute("toDo") ToDo toDo){
-        toDoService.save(toDo);
+    public String saveToDo(@Valid @ModelAttribute("toDo") ToDo toDo, Errors errors){
 
-        return "redirect:/";
+        if(!errors.hasErrors()){
+            toDoService.save(toDo);
+            return "redirect:/";
+        }
+        return "form";
     }
 
     @GetMapping("/delete")

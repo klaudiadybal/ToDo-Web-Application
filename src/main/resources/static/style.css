@@ -1,4 +1,4 @@
-body, h1, h2, h3 {
+body, h1, h2, h3, button {
     margin: 0;
     padding: 0;
 }
@@ -88,7 +88,7 @@ a {
 }
 
 .input {
-    margin-top: 50px;
+    width: 50%;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
@@ -101,7 +101,6 @@ a {
 
 
 .submit {
-    margin-top: 50px;
     text-decoration: none;
     color: #fff;
     background-color: #00cccc;
@@ -115,3 +114,20 @@ a {
     background-color: #000;
     color: #fff;
 }
+
+.submit-container {
+    margin-top: 20px;
+}
+
+.invalid-value {
+  margin-top: 15px;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #d8000c;
+  font-size: 14px;
+}
+
+.h2-create {
+    margin-bottom: 50px;
+}
+

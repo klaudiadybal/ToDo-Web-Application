@@ -9,15 +9,16 @@
 </head>
 <body>
     <div  class="form-container">
-        <h2 class="h2">Create your new to-do!</h2>
+        <h2 class="h2-create">Create your new to-do!</h2>
 
         <div>
             <form action="#" th:object="${toDo}" th:action="@{/save}" method="post">
                 <input type="hidden" th:field="${toDo.id}"/>
-                <input type="text" th:field="${toDo.value}" class="input"/>
-                <div>
+                <input type="text" th:field="${toDo.value}" class="input" th:errorclass="is-invalid"/>
+                <div class="submit-container">
                     <button type="submit" class="submit">Submit</button>
                 </div>
+                <div class="invalid-value" th:errors="${toDo.value}"></div>
             </form>
         </div>
     </div>
